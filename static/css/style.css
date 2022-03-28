@@ -1,0 +1,147 @@
+:root {
+	--gray: #ececec; 
+	--teal: #9fd3c7; 
+	--blue: #385170; 
+	--charcoal: #142d4c; 
+}
+
+/* Extra small devices (portrait phones, less than 576px) */
+/* No media query for `xs` since this is the default in Bootstrap */
+
+body {
+	background: rgb(20,45,76);
+	background: linear-gradient(0deg, rgba(20,45,76,1) 0%, rgba(56,81,112,1) 100%);
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 100%;
+	height: 100%;
+	color: white;
+}
+
+.main-content {
+	height:80vh;
+}
+
+.question {
+	padding: 0.375em 0.75em 0.375em 0.375em;
+}
+
+.start-btn {
+	margin:auto
+}
+
+.btn {
+	margin-top:10px;
+	border-radius:50px;
+	background-color: transparent;
+	border-color: var(--grey);
+	width:100%;
+	max-width:500px;
+}
+
+.btn:hover, .btn-primary:not(:disabled):not(.disabled):active {
+	background-color: var(--charcoal);
+	border-color: var(--grey)
+
+}
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.form-check {
+    position: relative;
+    display: block;
+    padding-left: 0;
+}
+
+img {
+	width:400px;
+	max-width:100%;
+}
+
+label {
+    display: flex;
+    cursor: pointer;
+    font-weight: 500;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 0.375em;
+}
+label input {
+    position: absolute;
+    left: -9999px;
+}
+label input:checked + span {
+    background-color: var(--teal);
+	color: var(--charcoal)
+}
+label input:checked + span:before {
+    box-shadow: inset 0 0 0 0.4375em var(--charcoal)
+}
+label span {
+    display: flex;
+    align-items: center;
+    padding: 0.375em 0.75em 0.375em 0.375em;
+    border-radius: 99em;
+    transition: 0.25s ease;
+}
+label span:hover {
+    background-color: #efefef;
+	color: var(--charcoal)
+}
+label span:before {
+    display: flex;
+    flex-shrink: 0;
+    content: "";
+    background-color: transparent;
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 50%;
+    margin-right: 0.375em;
+    transition: 0.25s ease;
+    box-shadow: inset 0 0 0 0.125em var(--gray);
+}
+
+footer {
+	margin-top: 50px;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	font-size:1rem;
+	background-color: var(--charcoal)
+}
+
+footer .footer-heading {
+	text-transform: uppercase;
+	font-weight:700;
+	margin-bottom:5px;
+}
+
+footer .footer-body {
+	opacity: 0.75
+}
+
+footer a {
+	color: white
+}
+
+footer a:hover {
+	color: var(--teal);
+	text-decoration: none;
+	transition: 0.25s all;
+}
+
+
+/* Small devices (landscape phones, 576px and up) */
+/* @media (min-width: 576px) { ... } */
+
+/* Medium devices (tablets, 768px and up) */
+/* @media (min-width: 768px) { ... } */
+
+/* Large devices (desktops, 992px and up) */
+/* @media (min-width: 992px) { ... } */
+
+/* Extra large devices (large desktops, 1200px and up) */
+/* @media (min-width: 1200px) { ... } */
