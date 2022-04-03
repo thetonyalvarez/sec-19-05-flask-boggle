@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}Boggle{% endblock %}
+
+{% block content %}
+
+	{% for row in range(size) %}
+	<div id="board">
+		{{ board[row] }}
+	</div>
+	{% endfor %}
+
+	<form id="guess-form" action="#" method="post">
+		<input id="guess-input" type="text" name="guess">
+		<button id="guess-submit" type="submit">Guess!</button>
+	</form>
+
+	<!-- {% with messages = get_flashed_messages(with_categories=true) %}
+	{% if messages %}
+		{% for category, msg in messages %}
+			<div>{{msg}}{{category}}</div>
+		{% endfor %}
+	{% endif %}
+	{% endwith %} -->
+
+	<div id="new-game-btn-wrapper"></div>
+	
+	<div id="message-wrapper"></div>
+
+	<div id="timer-wrapper"></div>
+
+	<div id="high-score-wrapper"></div>
+
+	<div id="games-played-wrapper"></div>
+
+	<div id="score-wrapper"></div>
+
+	<ul id="found-words"></ul>
+
+{% endblock %}
