@@ -63,7 +63,7 @@ def handle_guess():
         return redirect("/")
     
     # get guess from form
-    resp = json.loads(request.data)['guess']
+    resp = request.json['guess']
     check = boggle_game.check_valid_word(session['board'], resp)
 
     if check == "ok" and resp not in FOUNDWORDS:

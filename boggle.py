@@ -32,6 +32,12 @@ class Boggle():
 
         return board
 
+    def set_board(self, custom_board):
+        """Inject a custom board of your own"""
+        board = custom_board;
+        
+        return board
+
     def check_valid_word(self, board, word):
         """Check if a word is a valid word in the dictionary and/or the boggle board"""
 
