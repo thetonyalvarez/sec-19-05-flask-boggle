@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Set Board Size{% endblock %}
+
+{% block content %}
+
+	<p class="pt-5 text-center">What size board do you want to start with?</p>
+	<p class="small pt-2 text-center">Type a number between 3 and 5.</p>
+
+
+	<form class="pt-3" id="set-board-size-form" action="/set-board-size" method="post">
+		<input class="form-control" required id="set-board-size-input" type="number" min="3" max="5" name="size">
+		<button class="form-control btn btn-primary" type="submit"id="set-board-size-submit" type="submit">Start!</button>
+	</form>
+
+{% endblock %}

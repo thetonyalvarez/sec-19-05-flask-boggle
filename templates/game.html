@@ -1,40 +1,39 @@
 {% extends "base.html" %}
 
-{% block title %}Boggle{% endblock %}
+{% block title %}Boggle It Up!{% endblock %}
 
 {% block content %}
 
-	{% for row in range(size) %}
-	<div id="board">
-		{{ board[row] }}
+	<div id="timer-wrapper"></div>
+
+	<div id="board" class="m-auto">
+		{% for row in range(size) %}
+		<div class="board-row">
+			{% for ltr in board[row] %}
+				<span class="letter">{{ ltr }}</span>
+			{% endfor %}
+		</div>
+		{% endfor %}
 	</div>
-	{% endfor %}
+	
 
 	<form id="guess-form" action="#" method="post">
-		<input id="guess-input" type="text" name="guess">
-		<button id="guess-submit" type="submit">Guess!</button>
+		<input autofocus class="form-control" id="guess-input" type="text" name="guess">
+		<button class="form-control btn btn-primary" id="guess-submit" type="submit">Guess!</button>
 	</form>
 
-	<!-- {% with messages = get_flashed_messages(with_categories=true) %}
-	{% if messages %}
-		{% for category, msg in messages %}
-			<div>{{msg}}{{category}}</div>
-		{% endfor %}
-	{% endif %}
-	{% endwith %} -->
-
-	<div id="new-game-btn-wrapper"></div>
 	
 	<div id="message-wrapper"></div>
 
-	<div id="timer-wrapper"></div>
+	<div id="game-details-wrapper">
+		<ul id="found-words" class="list-unstyled"></ul>
+		<div id="high-score-wrapper"></div>
+		<div id="games-played-wrapper"></div>
+		<div id="score-wrapper"></div>
+	</div>
 
-	<div id="high-score-wrapper"></div>
+	<div id="new-game-btn-wrapper"></div>
 
-	<div id="games-played-wrapper"></div>
 
-	<div id="score-wrapper"></div>
-
-	<ul id="found-words"></ul>
 
 {% endblock %}

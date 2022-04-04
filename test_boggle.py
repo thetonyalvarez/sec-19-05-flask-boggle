@@ -1,13 +1,11 @@
 from unittest import TestCase
 
-from numpy import isin
 from app import app
 from flask import session
 from boggle import Boggle
 
 app.config['TESTING'] = True
 app.config['DEBUG_TB_HOSTS'] = ['dont-show-debug-toolbar']
-
 
 class BoggleTests(TestCase):
     """Test the boggle game functions."""
@@ -35,12 +33,6 @@ class BoggleTests(TestCase):
         cls.test_game = []
         cls.dict = []
 
-    # def setUp(self):
-    #     print("Inside Set Up")
-
-    # def tearDown(self):
-    #     print("Inside Tear Down")
-
     def test_read_dict(self):
         """Read the words.txt file and test for existence of 'hello'"""
         self.assertIn('hello', self.dict)
@@ -58,6 +50,7 @@ class BoggleTests(TestCase):
             for j in i:
                 # Check that each item in board is a string
                 self.assertTrue(isinstance(j, str))
+                self.assertFalse(isinstance(j, int))
 
     def test_check_valid_word(self):
         """Test check_valid_word function on fixed_board"""
